@@ -1,28 +1,28 @@
 name: Java CI with Maven
 
-on:
-  [push, pull_request]
+on: [push, pull_request]
 
 jobs:
   unit-test:
     strategy:
       matrix:
         java-version:
-          - 1.8
-          - 11
+          - 8.0.482+8
+          - 11.0.30+7
         os:
           - ubuntu-latest
           - windows-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Set up JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
         with:
           java-version: ${{ matrix.java-version }}
+          distribution: "zulu"
       - name: Cache local Maven repository
-        uses: actions/cache@v2
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -46,6 +46,8 @@ jobs:
         image: splunk/splunk:${{matrix.splunk-version}}
         env:
           SPLUNK_START_ARGS: --accept-license
+          SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+          SPLUNK_HEC_TOKEN: 11111111-1111-1111-1111-1111111111113
           SPLUNK_PASSWORD: changed!
         ports:
           - 8089
@@ -56,13 +58,14 @@ jobs:
           - 10668/udp
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Set up JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
         with:
-          java-version: 1.8
+          java-version: 8.0.482+8
+          distribution: "zulu"
       - name: Cache local Maven repository
-        uses: actions/cache@v2
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
