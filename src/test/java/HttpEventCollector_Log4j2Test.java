@@ -335,8 +335,8 @@ public final class HttpEventCollector_Log4j2Test {
         System.out.println("======finish print logEx");
         // in this case expect a valid http reply with a json error message
         HttpEventCollectorErrorHandler.ServerErrorException serverErrorException1 = (HttpEventCollectorErrorHandler.ServerErrorException) logEx.get(0);
-        Assert.assertEquals("Token disabled", serverErrorException1.getErrorText());
-        Assert.assertEquals(1, serverErrorException1.getErrorCode());
+        Assert.assertEquals("Invalid token", serverErrorException1.getErrorText());
+        Assert.assertEquals(4, serverErrorException1.getErrorCode());
         HttpEventCollectorErrorHandler.ServerErrorException serverErrorException2 = (HttpEventCollectorErrorHandler.ServerErrorException) logEx.get(1);
         Assert.assertEquals("Invalid token", serverErrorException2.getErrorText());
         Assert.assertEquals(4, serverErrorException2.getErrorCode());
