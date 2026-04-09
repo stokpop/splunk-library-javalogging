@@ -1,6 +1,6 @@
 # Splunk Logging for Java
 
-## Version 1.11.9
+## Version 1.11.10
 
 Splunk logging for Java enables you to log events to HTTP Event Collector or to a TCP input on a Splunk Enterprise instance within your Java applications. You can use three major Java logging frameworks: [Logback](http://logback.qos.ch), [Log4j 2](http://logging.apache.org/log4j/2.x/), and [java.util.logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html). Splunk logging for Java is also enabled for [Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org).
 
@@ -24,7 +24,7 @@ Here's what you need to get going with Splunk logging for Java.
 
 If you haven't already installed Splunk, download it
 [here](http://www.splunk.com/download). For more about installing and running
-Splunk and system requirements, see [Installing & Running Splunk](http://dev.splunk.com/view/SP-CAAADRV). Splunk logging for Java is tested with Splunk Enterprise 8.0 and 8.2.0.
+Splunk and system requirements, see [Installing & Running Splunk](http://dev.splunk.com/view/SP-CAAADRV). Splunk logging for Java is tested with Splunk Enterprise 8.0, 8.2, and 9.1.
 
 #### Java
 
