@@ -1,6 +1,6 @@
 # Splunk Logging for Java Changelog
 
-## Version 1.11.9
+## Version 1.11.10
 
 ### Security Updates
 
@@ -18,6 +18,10 @@
 ### Bug Fixes
 
 * Fix `SplunkCimLogEventUnitTest` tests which were not being executed (GitHub issue [#289](https://github.com/splunk/splunk-library-javalogging/issues/289))
+
+## Version 1.11.9
+
+Unreleased because of technical issues.
 
 ## Version 1.11.8
 
